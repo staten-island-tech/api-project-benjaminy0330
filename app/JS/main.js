@@ -1,11 +1,9 @@
-function greet(name){
-    const greetPromise = new Promise(function (resolve, reject){
-        resolve(`Hello ${name}`);
-    });
-    return greetPromise;
-}
+import "../css/style.css"
 
-const suzie = greet("suzie");
-suzie.then((hello)=>{
-    console.log(hello);
-});
+const URL = {"url": "https://random-d.uk/api/images/51.jpg", "message": "Powered by random-d.uk"}
+
+async function getData(URL){
+    const response = await fetch(URL);
+    console.log(response);
+}
+getData();
