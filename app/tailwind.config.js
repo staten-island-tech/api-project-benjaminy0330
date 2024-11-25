@@ -4,7 +4,7 @@ module.exports = {
     "./index.html",
     "./JS/main.js",
     "./src/**/*.{js,ts,jsx,tsx}",
-    "./node_modules/daisyui/dist/**/*.js", // Fixed typo
+    "./node_modules/daisyui/dist/**/*.js", 
   ],
   theme: {
     extend: {},
