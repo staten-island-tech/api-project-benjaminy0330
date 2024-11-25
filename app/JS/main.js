@@ -1,7 +1,29 @@
 import "../CSS/style.css";
 
 
-async function getData() {
+
+
+const URL = "https://pokeapi.co/api/v2/berry/";
+
+async function getData(URL){
+  try {
+    const response = await fetch(URL);
+    const data = await response.json();
+    document.getElementById("api-response").textContent = data.content;
+  } catch (error) {
+    console.log(error);
+  }
+}
+getData(URL);
+
+
+
+
+
+
+
+
+/*async function getData() {
   try {
     const response = await fetch("https://pokeapi.co/api/v2/berry/");
 
@@ -17,9 +39,9 @@ async function getData() {
       createcards(berry.url, berry.name);
     });
   } catch (error) {
-    console.error("Error fetching data:", error);
+    console.error("Error fetching data:");
     alert("Unable to find berry");
   }
 }
 
-getData();
+getData();*/
