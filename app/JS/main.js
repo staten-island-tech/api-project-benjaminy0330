@@ -1,23 +1,20 @@
 import "../CSS/style.css";
 
 
+const URL = "https://opentdb.com/api.php?"; //https://opentdb.com/api.php?amount=50
 
-
-const URL = "https://pokeapi.co/api/v2/berry/";
-
-async function getData(URL){
-  try {
-    const response = await fetch(URL);
-    const data = await response.json();
-    document.getElementById("api-response").textContent = data.content;
-  } catch (error) {
-    console.log(error);
-  }
+fetch(URL).then((response) => response.json());
+async function fetchData(URL){
+try {
+  const response = await fetch(URL);
+  const data = await response.json();
+  console.log(data);
+  return data;
+} catch (error) {
+  console.error(error);
 }
-getData(URL);
-
-
-
+}
+fetchData(URL);
 
 
 
