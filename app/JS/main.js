@@ -1,7 +1,11 @@
 import "../CSS/style.css";
 
+const DOMSelectors = {
 
-const URL = "https://opentdb.com/api.php?"; //https://opentdb.com/api.php?amount=50
+}
+
+
+const URL = "https://pokeapi.co/api/v2/berry/?offset=20&limit=64"; //https://opentdb.com/api.php?amount=50
 
 fetch(URL).then((response) => response.json());
 async function fetchData(URL){
@@ -15,6 +19,7 @@ try {
 }
 }
 fetchData(URL);
+
 
 
 
