@@ -1,49 +1,31 @@
 import "../CSS/style.css";
 
-const DOMSelectors = {
 
-}
+const URL = "https://amiiboapi.com/api/amiibo/";
 
-
-const URL = "https://pokeapi.co/api/v2/berry/?offset=20&limit=64"; //https://opentdb.com/api.php?amount=50
-
-fetch(URL).then((response) => response.json());
-async function fetchData(URL){
-try {
-  const response = await fetch(URL);
-  const data = await response.json();
-  console.log(data);
-  return data;
-} catch (error) {
-  console.error(error);
-}
+async function fetchData(URL) {
+  try {
+    const response = await fetch(URL);
+    const data = await response.json();
+    createcard(data.amiibo);
+    console.log(data);
+  } catch (err) {
+    console.error(err);
+  }
 }
 fetchData(URL);
 
-
-
-
-
-
-/*async function getData() {
-  try {
-    const response = await fetch("https://pokeapi.co/api/v2/berry/");
-
-    if (response.status !== 200) {
-      throw new Error(`HTTP Error: ${response.status}`);
-    }
-    const data = await response.json();
-
-    console.log(data);
-
-    data.items.forEach((berry) => {
-      console.log(berry.name);
-      createcards(berry.url, berry.name);
-    });
-  } catch (error) {
-    console.error("Error fetching data:");
-    alert("Unable to find berry");
-  }
+function createcard(amiibos){
+  const container = document.querySelector(".container");
+  amiibos.forEach((amiibo) => {
+    container.insertAdjacentHTML(
+      "beforeend",
+      `<div class = "flex-initial">
+      <div> <h1> ${amiibo.name} </h1> </div>
+       <img src="${amiibo.image}" alt = "amiibo-image" class ="image">
+       </div>
+      `
+    )
+  })
+  
 }
-
-getData();*/
