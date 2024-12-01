@@ -31,8 +31,6 @@ function createcard(amiibos){
   })
   
 }
-
+//
 fetchData(URL);
-/*const searchURL = "https://amiiboapi.com/api/amiibo/";
 
-*/ 
