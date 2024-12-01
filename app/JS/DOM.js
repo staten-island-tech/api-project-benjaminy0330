@@ -1,5 +1,5 @@
 const DOMselectors = {
-    container: document.querySelector("#container"),
+    container: document.getElementById 
   };
   
   export { DOMselectors };

@@ -13,16 +13,16 @@ async function fetchData(URL) {
     console.error(err);
   }
 }
-fetchData(URL);
+
 //defeault
 function createcard(amiibos){
   const container = document.querySelector(".container");
   amiibos.forEach((amiibo) => {
     container.insertAdjacentHTML(
       "beforeend",
-      `<div class = "w-60 rounded-md border-4 border-red-500/100 m-4">
+      `<div class = "w-60 rounded-[14px] border-4 border-white m-4 bg-slate-300">
        <h2> ${amiibo.name} </h2>
-       <img src="${amiibo.image}" alt = "amiibo-image" class ="w-50 place-items-center">
+      <img src="${amiibo.image}" alt = "amiibo-image" class ="w-41">
        <h2> ${amiibo.gameSeries} </h2>
        <h2> Released: ${amiibo.release.jp} </h2>
        </div>
@@ -32,4 +32,7 @@ function createcard(amiibos){
   
 }
 
+fetchData(URL);
+/*const searchURL = "https://amiiboapi.com/api/amiibo/";
 
+*/ 
