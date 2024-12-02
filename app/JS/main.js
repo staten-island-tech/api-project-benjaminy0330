@@ -16,13 +16,13 @@ async function fetchData(URL) {
 
 //defeault
 function createcard(amiibos){
-  const container = document.querySelector(".container");
+  const container = document.querySelector(".cardholder");
   amiibos.forEach((amiibo) => {
     container.insertAdjacentHTML(
       "beforeend",
-      `<div class = "w-60 rounded-[14px] border-4 border-white m-4 bg-slate-300">
-       <h2> ${amiibo.name} </h2>
-      <img src="${amiibo.image}" alt = "amiibo-image" class ="">
+      `<div class = "w-60 rounded-[14px] border-8 font-semibold border-white m-4 bg-slate-300">
+       <h2 class ="text-2xl pb-4 pt-2"> ${amiibo.name} </h2>
+      <img src="${amiibo.image}" alt = "amiibo-image" class ="pb-2">
        <h2> ${amiibo.gameSeries} </h2>
        <h2> Released: ${amiibo.release.jp} </h2>
        </div>
