@@ -1,4 +1,4 @@
-import "../CSS/style.css";
+import "../css/style.css"
 
 
 const URL = "https://amiiboapi.com/api/amiibo/";
